@@ -49,14 +49,15 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
+/** Re style the nav bar and the main header **/
 nav {
   width: 100%;
-  height: 80px;
   background-color: #252831;
   text-align:center;
 }
 nav h1 {
   margin: auto;
+  padding: 25px 20px;
 }
 nav h1 a {
   color: #fff;
@@ -64,15 +65,18 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+  text-align: center;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    padding: 0 8px;
+    max-width: 100%;
 }
+
 
 /* Display list items side by side */
 #breadcrumb li {
@@ -104,18 +108,19 @@ nav h1 a {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
+/*** Modify the filters style for responsiveness and nice looks. ***/
 .filter-options {
   width: 100%;
-  height: 50px;
-  background-color: #3397DB;
+  background-color: #262932;
   align-items: center;
+  padding: 15px 0;
 }
-.filter-options h2 {
+.filter-options h2,.filters {
   color: white;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  text-align: center;
 }
 .filter-options select {
   background-color: white;
@@ -128,14 +133,22 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
+.filter-options select:focus,select:hover {
+  background: #F4D03F;
+}
 
 /* ====================== Restaurant Listing ====================== */
+/** For responsiveness of the restaurants lists,I added flex to it's container and other style adjustments. **/
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -143,20 +156,33 @@ nav h1 a {
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
-  padding: 0 30px 25px;
+  padding: 10px 10px 10px;
   text-align: left;
-  width: 270px;
+  min-width: 270px;
+  max-width: 300px;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-  margin: 0;
+  margin-right: 10px;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
+  overflow: hidden;
 }
+
+#restaurants-list .restaurant-text-area {
+  padding: 0 25px;
+  margin-top:  10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  max-height: 170px;
+
+}
+
 #restaurants-list li h1 {
-  color: #f18200;
+  color: #a85900;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -169,9 +195,10 @@ nav h1 a {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list li a {
-  background-color: orange;
+#restaurants-list li button {
+  background-color: #a85900;
   border-bottom: 3px solid #eee;
+  border-radius: 10px;
   color: #fff;
   display: inline-block;
   font-size: 10pt;
@@ -180,6 +207,10 @@ nav h1 a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+}
+#restaurants-list li button:focus,#restaurants-list li button:hover  {
+  background: #F4D03F;
 }
 
 /* ====================== Restaurant Details ====================== */
