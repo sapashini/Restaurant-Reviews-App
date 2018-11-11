@@ -22,13 +22,13 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
-      <a href="#restaurant-container" class="to-main-content">Go to main content</a>
+      <h1><a href="/" title="Main Heading" aria-labelledby="Main Heading">Restaurant Reviews</a></h1>
+      <a href="#filter-options" aria-labelledby="Skip to Main Content" class="to-main-content">Go to main content</a>
     </nav>
 
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+      <li><a href="/" aria-labelledby="Home">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -44,25 +44,25 @@
     <!-- End map -->
 
     <!-- Beginning restaurant -->
-    <section id="restaurant-container">
+    <section id="restaurant-container" aria-label="Restaurant Details">
       <h2 id="restaurant-name"></h2>
-      <img id="restaurant-img">
+      <img id="restaurant-img" title="Restaurant Promotional Picture">
       <p id="restaurant-cuisine"></p>
     </section>
 
     <section class="restaurant-address-hours">
       <label id="restaurant-address-hours"><span>Address:</span></label>
-      <p id="restaurant-address" aria-label labelby="restaurant-address-label"></p>
+      <p id="restaurant-address" aria-labelledby="Restaurants Address Label"></p>
     </section>
 
-    <label class="restaurant-hours"><span>Operation Hours:</span></label>
+    <label class="restaurant-hours" aria-labelledby="Restaurants Operating Hours"><span>Operating Hours:</span></label>
     <section class="restaurant-hours-flex">
       <table id="restaurant-hours"></table>
     </section>
     <!-- end restaurant -->
 
     <!-- Beginning reviews -->
-    <section id="reviews-container">
+    <section id="reviews-container" aria-labelledby="Restaurants Reviews">
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
