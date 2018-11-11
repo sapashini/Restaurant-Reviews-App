@@ -1,0 +1,60 @@
+@media screen and (min-width:551px){
+
+}
+
+@media screen and (min-width: 500px) {
+	body {
+		min-width: 800px;
+	}
+	.skip-link {
+		font-size: 16px;
+	}
+	#map-aria-description {
+		font-size: 16px;
+		padding: 0 8px;
+	}
+	#neighborhoods-select {
+		font-size: 16px;
+	}
+	#cuisines-select {
+		font-size: 16px;
+	}
+	#restaurants-list p {
+		font-size: 18pt;
+	}
+	.restaurant-hours-flex {
+  		display: flex;
+  		justify-content: center;
+  		align-items: left;
+  		padding: 5px 0 30px 35px;
+  		font-size: 22px;
+	}
+	.restaurant-address-hours {
+  		padding: 0 0 10px 35px;
+  		font-size: 22px;
+	}
+	#restaurant-hours {
+		width: 180%;
+	}
+	#restaurant-hours td {
+		font-size: 18px;
+	}
+	#reviews-list li p {
+		font-size: 12pt;
+	}
+}
+
+@media screen and (min-width:1100px) {
+	body {
+    min-width: 1100px;
+    margin-left: auto;
+	margin-right: auto;
+	}
+	.skip-link {
+		font-size: 14px;
+	}
+	#map-aria-description {
+	font-size: 14px;
+	padding: 0 8px;
+	}
+}
