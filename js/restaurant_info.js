@@ -4,34 +4,57 @@ var newMap;
 /**
  * Initialize map as soon as the page is loaded.
  */
-document.addEventListener('DOMContentLoaded', (event) => {  
+document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
 });
 
 /**
  * Initialize leaflet map
  */
+ // Create custom content if map is offline.
+ function mapCustContent() {
+  const map = document.getElementById('map');
+  map.className = "map-offline-message";
+  map.innerHTML = `<div class="warning-message-icon">!</div>
+    <div class="map-warning-message">Map failed to load; offline?</div>
+    <div class="map-warning-suggestion">Check connection and try agin,please!</div>`;
+
+ }
 initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
     } else {
-      self.newMap = L.map('map', {
-        center: [restaurant.latlng.lat, restaurant.latlng.lng],
-        zoom: 16,
-        scrollWheelZoom: false
-      });
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        // Added map API key.
-        mapboxToken: "pk.eyJ1Ijoic2FwYXNoaW5pIiwiYSI6ImNqbnVtZ2I2eDE2OXEzcnByajZyandyYncifQ.lhVLbD2P-C2NI4cr4O1l9A",
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox.streets'
-      }).addTo(newMap);
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
+      // To enable the app work offline without the map,
+      // I use 'navigator.onLine' property to monitor the online status of the browser,and then
+      // use 'try...catch' to try and execute the code, and catch any thrown error.
+      if (navigator.onLine) {
+        try {
+          self.newMap = L.map('map', {
+            center: [restaurant.latlng.lat, restaurant.latlng.lng],
+            zoom: 16,
+            scrollWheelZoom: false
+          });
+          L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
+            // Added map API key.
+            mapboxToken: "pk.eyJ1Ijoic2FwYXNoaW5pIiwiYSI6ImNqbnVtZ2I2eDE2OXEzcnByajZyandyYncifQ.lhVLbD2P-C2NI4cr4O1l9A",
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+              '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+              'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(newMap);
+        DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
+      } catch(error) {
+        console.log("Map failed to initialized", error);
+        // Set map to, failed loading due to error.
+        mapCustContent();
+      }
+    }else {
+      // Set map to, failed loading due to network disconnection.
+      mapCustContent();
+    }
+    fillBreadcrumb();
     }
   });
 }
