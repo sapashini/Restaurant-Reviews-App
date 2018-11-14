@@ -20,8 +20,8 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/" title="Main Heading" aria-labelledby="Main Heading">Restaurant Reviews</a></h1>
-      <a href="#filter-options" aria-labelledby="Skip to Main Content" class="to-main-content">Go to main content</a>
+      <h1><a href="/" title="Main Heading">Restaurant Reviews</a></h1>
+      <a href="#filter-options" class="to-main-content">Go to main content</a>
     </nav>
   </header>
 
@@ -35,10 +35,10 @@
       <div id="filter-options" class="filter-options">
         <h2>Filter Results</h2>
         <div class="filters">
-          <select  id="neighborhoods-select" name="neighborhoods" aria-label="Neighborhoods Filter" role="tablist" aria-controls="restaurants-list" onchange="updateRestaurants()">
+          <select  id="neighborhoods-select" name="neighborhoods" aria-label="Neighborhoods Filter" aria-controls="restaurants-list" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" aria-label="Cuisine Filter" role="tablist" aria-controls="restaurants-list" onchange="updateRestaurants()">
+          <select id="cuisines-select" name="cuisines" aria-label="Cuisine Filter" aria-controls="restaurants-list" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
         </div>
