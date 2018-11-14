@@ -28,17 +28,17 @@
   <main id="maincontent">
 
     <section id="map-container">
-      <div id="map" role="application"></div>
+      <div id="map" role="application" aria-label="location"></div>
     </section>
     <section>
       <!--Editted filter options for responsiveness and better style.-->
       <div id="filter-options" class="filter-options" >
         <h2 role="heading" aria-level="2">Filter Results</h2>
         <div class="filters">
-          <select  id="neighborhoods-select" name="neighborhoods" role="listbox" aria-label="Neighborhoods Filter" aria-controls="restaurants-list" onchange="updateRestaurants()">
+          <select  id="neighborhoods-select" name="neighborhoods" role="tablist" aria-label="Neighborhoods Filter" aria-controls="restaurants-list" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" aria-label="Cuisine Filter" role="listbox" aria-controls="restaurants-list" onchange="updateRestaurants()">
+          <select id="cuisines-select" name="cuisines" aria-label="Cuisine Filter" role="tablist"  aria-controls="restaurants-list" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
         </div>
