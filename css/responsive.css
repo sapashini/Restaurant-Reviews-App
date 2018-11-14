@@ -1,13 +1,13 @@
-@media screen and (min-width:551px){
+@media screen and (max-width:360px){
+	#restaurant-img {
+  		height: 280px;
+	}
 
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
 	body {
 		min-width: 800px;
-	}
-	.skip-link {
-		font-size: 16px;
 	}
 	#map-aria-description {
 		font-size: 16px;
@@ -29,10 +29,10 @@
   		padding: 5px 0 30px 35px;
   		font-size: 22px;
 	}
-	.restaurant-address-hours {
-  		padding: 0 0 10px 35px;
-  		font-size: 22px;
+	restaurant-img {
+		height: 380px;
 	}
+	
 	#restaurant-hours {
 		width: 180%;
 	}

@@ -233,4 +233,3 @@ if (navigator.serviceWorker) {
     console.log("Service Worker failed to register!");
   });
 }
-
