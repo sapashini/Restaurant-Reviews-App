@@ -194,6 +194,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
   more.setAttribute('aria-label', `View details about ${restaurant.name}`);
+  more.setAttribute('role', `button`);
   more.onclick = () => {
     window.location = url;
   }

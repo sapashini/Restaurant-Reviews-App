@@ -22,13 +22,13 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/" title="Main Heading" aria-labelledby="Main Heading">Restaurant Reviews</a></h1>
-      <a href="#filter-options" aria-labelledby="Skip to Main Content" class="to-main-content">Go to main content</a>
+      <h1><a href="/" title="Main Heading" role="heading" aria-level="1" aria-labelledby="Main Heading">Restaurant Reviews</a></h1>
+      <a href="#filter-options" aria-labelledby="Skip to Main Content" class="to-main-content" role="navigation">Go to main content</a>
     </nav>
 
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" >
-      <li><a href="/" aria-labelledby="Home">Home</a></li>
+      <li><a href="/" aria-labelledby="Home" role="navigation">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -36,10 +36,10 @@
   <!-- End header -->
 
   <!-- Beginning main -->
-  <main id="maincontent">
+  <main id="maincontent" role="main">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application"></div>
     </section>
     <!-- End map -->
 
@@ -63,14 +63,14 @@
 
     <!-- Beginning reviews -->
     <section id="reviews-container" aria-labelledby="Restaurants Reviews">
-      <ul id="reviews-list"></ul>
+      <ul id="reviews-list" role="list"></ul>
     </section>
     <!-- End reviews -->
   </main>
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->
